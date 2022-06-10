@@ -23,3 +23,15 @@ pip install -r requirements.txt
  ```
 
 Installation Video of Xampp [https://www.youtube.com/watch?v=U5ghHLRv6uc]
+
+
+Result
+
+To run the project use
+
+```
+python app.py
+ ```
+ 
+The resultant will be displayed in your browser
+!(https://github.com/Praneethkanchanakuntla/healthcare/blob/main/photo2.png)
