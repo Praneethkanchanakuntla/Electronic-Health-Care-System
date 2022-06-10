@@ -92,7 +92,7 @@ after click on the disease to detect please enter values and click predict
  <hr>
  
  thanks for every one, for visting <br>
- <hr>
+
  you can mail me at : Praneeth152000@gmail.com 
  <hr>
  
