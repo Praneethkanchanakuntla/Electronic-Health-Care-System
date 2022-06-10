@@ -12,3 +12,12 @@ Back end -  Python Flask
 
 Database - Xammp Mysql
 
+
+<h3>Installation Guide</h3>
+<br>
+ 
+  Go to Comand Prompt and route to directory where you have cloned the project to and
+. use pip install -r requirements.txt
+
+
+Installation Video of Xampp [https://www.youtube.com/watch?v=U5ghHLRv6uc]
