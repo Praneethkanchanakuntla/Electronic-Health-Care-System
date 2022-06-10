@@ -34,4 +34,7 @@ python app.py
  ```
  
 The resultant will be displayed in your browser
-![](https://github.com/Praneethkanchanakuntla/healthcare/blob/main/photo2.png)
+
+<br>
+
+![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/home.jpeg)
