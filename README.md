@@ -85,9 +85,10 @@ after click on the disease to detect please enter values and click predict
  
  the values enetred will be feeded to the ml model and prediction is given along with symptoms, causes precaution so that the user can correlate
  
- <br>
+ 
  ![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/symptoms.jpeg)
  
+ <br>
  
  thanks for every one, for visting
  you can mail me at : Praneeth152000@gmail.com 
