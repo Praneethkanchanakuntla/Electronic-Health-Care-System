@@ -1,0 +1,100 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "Hey",
+          "How are you",
+          "Is anyone there?",
+          "Hello",
+          "Howdy",
+          "Greetings",
+          "I need help",
+          "Can you help",
+          "Good day",
+          "Hi there",
+          "Good morning",
+          "Good evening",
+          "Good afternoon"
+        ],
+        "responses": [
+          "Hey, how can I be of assistance?",
+          "Hello, thanks for visiting.",
+          "Hi there, what can I do for you?",
+          "Hi there, how can I help?",
+          "Welcome , How may I be of assistance?"
+        ]
+      },
+      
+      
+      
+  
+      
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye", "thanks for you help", "that's all for today"],
+        "responses": [
+          "See you later, thanks for visiting",
+          "Have a nice day",
+          "Bye! Come back again soon."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!", "thank you for your assistance"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      },
+      {
+        "tag": "services",
+        "patterns": [
+          "What type of service  do you have?",
+          "What are your services"
+        ],
+        "responses": [
+          "We will help you detect diseases",
+          "we will help you manage your hospitals"
+        ]
+      },
+      {
+        "tag": "prediction",
+        "patterns": [
+          "Do you predict diseases",
+          "Do you show diet ans symptoms",
+          "what diseases you predict"
+          
+        ],
+        "responses": [
+          "we predict vatious diseases",
+          "We predict and show symptoms and precautions"
+        ]
+      },
+      {
+        "tag": "bookings",
+        "patterns": [
+          "How departments you have to book",
+          "How many doctors",
+          "how to book appointments"
+        ],
+        "responses": [
+          "we offer variety of departments you can view by loging in",
+          "our departments are cardiology,neurology,etc"
+        ]
+      },
+      {
+        "tag": "appointments",
+        "patterns": [
+          "how to book appointments",
+          "show appointments",
+          "Delete appointments"
+        ],
+        "responses": [
+          "by logining in to system you see the departments to book appointments",
+          "By using dashboard we can easily delete,view,book appointments"
+          
+        ]
+      }
+      
+    ]
+  }
+  
