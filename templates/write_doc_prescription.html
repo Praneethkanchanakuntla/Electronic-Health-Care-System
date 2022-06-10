@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{%block content%}
+
+<h1 class="head">Prescription</h1>
+<hr>
+<div class="details">
+    {% for i in elem %}
+
+
+    <strong> {{"patient name"|upper}}</strong>:{{i.name|upper}}
+    <br>
+    <strong> {{"patient email"|upper}} </strong>{{i.email}}
+    <br>
+
+    <strong> {{"patient id"|upper}} </strong>:{{i.patient_id}}
+
+    {% endfor %}
+</div>
+{%- if user=="ok" -%}
+    <center>
+      <br>
+      <br>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="230" height="230" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+      <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+      <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+    </svg>
+   <h4> <label for="formGroupExampleInput">Go to dashboard to view appointments</label> </h4>
+  </center>
+{% else %}
+<center>
+    {% for i in elem %}
+    
+    <form action="{{url_for('prescriptions_short',id=i.patient_id,id2=id2)}}" method="post">
+        <div class="forms">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Temperature</label>
+                <input type="number" name="temp" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Temperature">
+            </div>
+            <br>
+              
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Blood Pressure</label>
+                <input type="number" name="bp" class="form-control" id="exampleFormControlInput1"
+                    placeholder="BloodPressure">
+            </div>
+            <br>
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Infected area or pain area of the patient </label>
+            <br>
+             {% for i in photo %}   
+
+             <a href="{{url_for('view_photo_detail',id4=i.file_name)}}" class="link">  <img src="{{url_for('static',filename='images_user/'+ i.file_name)}}" width=" 200" align="center" > </a>
+             <br>
+             
+            </div>
+            <div class="form-floating">
+                <label for="floatingTextarea2">Symptoms</label>
+                <hr>
+                
+                    <br>
+
+                    {{i.audio }}
+                    <textarea class="form-control" name="invest" placeholder="Symptoms and investigations"
+            
+            
+                    id="floatingTextarea2" style="height: 100px"></textarea>
+                    <hr>
+            {% endfor %}     
+                    
+
+            </div>
+            <br>
+            
+            <div class="form-floating">
+                <label for="floatingTextarea2">prescription</label>
+                <textarea class="form-control" name="prescription" placeholder="Prescription" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+
+            </div>
+            <br>
+            <button id="sub" class="btn btn-primary" type="submit ">submit</button>
+        </div>
+        <br>
+      
+      {% endfor %}
+      </form>
+    
+    
+{% endif %}
+</center>
+<style>
+    .forms {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 50px;
+        margin-bottom: 300px;
+    }
+
+    .details {
+        content: initial;
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 50px;
+    }
+
+    .head {
+        margin-top: 30px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+</style>
+{% endblock %}

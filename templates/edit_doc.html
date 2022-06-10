@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+<h2>Posts</h2>
+
+<div class="content">
+    {% block content %}
+
+
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.title.label(class="form-label")}}
+            {{ form.title(class="form-control") }}
+            <br />
+            {{ form.patient_id.label(class="form-label")}}
+            {{ form.patient_id(class="form-control") }}
+             <br />
+            {{ form.Bp.label(class="form-label")}}
+            {{ form.Bp(class="form-control") }}
+            <br />
+            {{ form.Temp.label(class="form-label")}}
+            {{ form.Temp(class="form-control") }}
+            <br />
+            {{ form.invest.label(class="form-label")}}
+            {{ form.invest(class="form-control",rows="5") }}
+            <br />
+            {{ form.prescription.label(class="form-label")}}
+            {{ form.prescription(class="form-control",rows="5") }}
+            <br />
+            {{ form.slug.label(class="form-label")}}
+            {{ form.slug(class="form-control") }}
+            <br />
+
+            {{ form.submit( class="btn btn-primary") }}
+        </form>
+    </div>
+
+    <a href="{{ url_for('doctor_posts')}}" class="btn btn-outline-secondary btn-sm">Back to All</a>
+    {% endblock %}
+</div>

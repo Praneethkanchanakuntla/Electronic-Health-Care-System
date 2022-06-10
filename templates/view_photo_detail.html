@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+
+{% block content %} 
+
+{% for i in photo %}  
+<center>
+<div class="photo">
+<img src="{{url_for('static',filename='images_user/'+ i.file_name)}}" width=" 700"  >
+</center>
+</div>
+{% endfor %}
+
+
+<style>
+    .photo
+    {
+        margin-top: 60px;
+        
+    }
+</style>
+{% endblock %}

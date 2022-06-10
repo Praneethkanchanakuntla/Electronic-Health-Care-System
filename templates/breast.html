@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .form_enter {
+        margin-left: 200px;
+        margin-right: 300px;
+    }
+    .title {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    </style>
+    <title>Breast Cancer Prediction</title>
+</head>
+
+<body>
+    <div class="title">
+    <h1>Breast Cancer Prediction</h1>
+    <!--Mask-->
+</div>
+
+
+    <center>
+        <form action="{{ url_for('predict_breast')}}" method="post">
+            <div class="form_enter">
+            <div class="form-group">
+                <br>
+                <!-- TODO : Year to accept only year date picker -->
+                <label for="concave points_mean">Mean of the Concave Points</label>
+                <input class="form-control" type="number" id="concave points_mean" name="concave points_mean"
+                    required="required" placeholder="Mean of the Concave Points">
+            </div>
+            <div class="form-group">
+                <label for="area_mean">Mean of the Area</label>
+                <input class="form-control" type="number" step="any" id="area_mean" name="area_mean" required="required"
+                    placeholder="Mean of the Area">
+            </div>
+            <div class="form-group">
+                <label for="radius_mean">Mean of the Radius</label>
+                <input class="form-control" type="number" id="radius_mean" name="radius_mean" required="required"
+                    placeholder="Mean of the radius">
+            </div>
+            <div class="form-group">
+                <label for="perimeter_mean">Mean of the Perimeters</label>
+                <input class="form-control" type="number" id="perimeter_mean" name="perimeter_mean" required="required"
+                    placeholder="Mean of the Parameter">
+            </div>
+            <div class="form-group">
+                <label for="concavity_mean">Mean of the Concavity</label>
+                <input class="form-control" type="number" id="concavity_mean" name="concavity_mean" required="required"
+                    placeholder="Mean of the concavity">
+            </div>
+            <button type="submit" class="btn btn-danger">Predict</button>
+            </div>
+        </form>
+
+
+    </center>
+    <!--/.Mask-->
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

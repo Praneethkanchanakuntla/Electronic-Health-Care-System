@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hepatitis</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Hepatits C Prediction</h1>
+    </div>
+    <!--gender,age,hypertension,heart_disease,ever_married,work_type,Residence_type,avg_glucose_level,bmi,smoking_status-->
+    <form action="{{ url_for('predict_hepatitis')}}" method="post">
+        <center>
+            <div class="form_enter">
+               <div class="mb-3">
+                   <br>
+                    <label for="formGroupExampleInput" class="form-label">Enter Age</label>
+                    <input name="Age" id="zero"  class="form-control" required="required" type="number">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">gender</label>
+                    <select name="gender" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Aspartate Transaminase</label>
+                    <input id="first" name="asp" class="form-control" type="number ">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Bilirubin</label>
+                    <input  name="bil" class="form-control"  id="second" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Acetylcholinesterase</label>
+                    <input  name="acety" class="form-control"  id="third" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Creatinine</label>
+                    <input  name="cet" class="form-control"  id="fourth" type="number" required="required">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Gamma-Glutamyl Transferase</label>
+                    <input  name="gama" class="form-control"  id="fivith" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Alkaline phosphatase</label>
+                    <input id ="six" name="alkaline" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">cholesterol</label>
+                    <input id ="seven" name="cholesterol" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Albumin Blood Test</label>
+                    <input id =" eight" name="albumin" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Proteins levels</label>
+                    <input id ="nine" name="proteins" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Alanine Transaminase</label>
+                    <input id ="ten" name="Transaminase" required="required" type="number" class="form-control">
+                </div>
+                
+
+                
+
+
+                
+                
+                
+
+                <br><br><button id="sub" class="btn btn-primary" type="submit ">predict</button>
+                <br>
+        </center>
+    </form>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+    {{ text  }}
+</body>
+
+</html>
+<style>
+    .form_enter {
+        margin-left: 200px;
+        margin-right: 300px;
+    }
+
+    .title {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    select {
+        text-align-last: center;
+    }
+</style>
