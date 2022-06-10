@@ -17,7 +17,9 @@ Database - Xammp Mysql
 <br>
  
   Go to Comand Prompt and route to directory where you have cloned the project to and
-. use pip install -r requirements.txt
-
+use
+ ```
+pip install -r requirements.txt
+ ```
 
 Installation Video of Xampp [https://www.youtube.com/watch?v=U5ghHLRv6uc]
