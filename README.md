@@ -89,9 +89,12 @@ after click on the disease to detect please enter values and click predict
  ![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/symptoms.jpeg)
  
  <br>
+ <hr>
  
- thanks for every one, for visting
+ thanks for every one, for visting <br>
+ <hr>
  you can mail me at : Praneeth152000@gmail.com 
+ <hr>
  
  
 
