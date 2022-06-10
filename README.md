@@ -44,7 +44,7 @@ The user have to login or register into system in order to access the portal the
 ![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/login%20page.jpeg)
 
 
-<h6> At the patient Side </h6>
+<h4> At the patient Side </h4>
 
 After sucessfull login into the portal it will be redirected to Dashboard where the patient can book the appointments according to the department and able to see the older prescriptions and see the appointments and he can cancel the appointments.
 
@@ -56,7 +56,7 @@ When you want book an appointmetnt please click on the department and select the
 ![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/appointment%20booked.jpeg)
 
 
-<h6> At Doctor Side </h6>
+<h4> At Doctor Side </h4>
 ater sucess login to portal the doctor is redirected to the doctor dashborad where he/she can see the appointments booked and click the patient name to see their older prescriptions written by previous doctor consulation so that the patient is not required to carry the prescriptions every time and they are digitalized and doctor can see the details of older consulations and write the presciption
 
 
@@ -79,11 +79,13 @@ The doctor can use Prediction Module where he can detect diseases using Machine 
 
 
 after click on the disease to detect please enter values and click predict
+<br>
  ![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/Stroke.jpeg)
  
  
  the values enetred will be feeded to the ml model and prediction is given along with symptoms, causes precaution so that the user can correlate
  
+ <br>
  ![](https://github.com/Praneethkanchanakuntla/Electronic-Health-Care-System/blob/main/Readme%20images/symptoms.jpeg)
  
  
