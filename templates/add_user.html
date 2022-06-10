@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+<h3 class="head">Register</h3>
+
+<div class="from">
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    
+    {{ form.username.label(class="form-label")}}
+    {{ form.username(class="form-control") }}
+    <br/>
+    {{ form.email.label(class="form-label")}}
+    {{ form.email(class="form-control") }}
+    <br/>
+    {{ form.aadhar.label(class="form-label")}}
+    {{ form.aadhar(class="form-control") }}
+    <br/>
+    {{ form.dept.label(class="form-label")}}
+    {{ form.dept(class="form-control") }}
+    <br/>
+    {{ form.password_hash.label(class="form-label")}}
+    {{ form.password_hash(class="form-control") }}
+    <br/>
+    {{ form.password_hash2.label(class="form-label")}}
+    {{ form.password_hash2(class="form-control") }}
+    <br/>
+    {{ form.submit( class="btn btn-primary") }}
+</form>
+<br>
+<br>
+<a href="{{url_for('login_users')}}" class="btn btn-secondary">Login</a>
+</div>
+<style>
+    .from
+    {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 30px;
+        margin-bottom: 200px;
+    }
+    .head{
+        margin-left: 200px;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}
+

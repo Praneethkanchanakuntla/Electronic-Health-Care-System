@@ -1,0 +1,25 @@
+{% extends "base_patient.html" %}
+
+
+{% block content %}  
+<div class="card">
+<div class="shadow p-3 mb-5 bg-body rounded">
+{% for i in use %}  
+username:{{i.username}} <br>
+email: {{i.email}} <br>
+
+doctor:id {{i.id}} <br>
+Department:{{i.dept}} <br>
+ 
+{% endfor %}
+</div>
+</div>
+<style>
+    .card
+    {
+        margin-top: 20px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+</style>
+{% endblock %}

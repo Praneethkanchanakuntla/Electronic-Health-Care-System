@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <div class="titles">
+        <title>Heart attack</title>
+    </div>
+</head>
+
+<body>
+    <center>
+        <h1>Heart attack Prediction</h1>
+    </center>
+    <form action="{{ url_for('predict_heart')}}" method="post">
+        <center>
+            <div class="form_enter">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Age</label>
+                    <input id="first" name="Age" class="form-control" type="number">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Gender</label>
+                    <select name="gender" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option class="lt" value="1">Male</option>
+                        <option class="lt" value="2">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Type of Chest Pain</label>
+                    <select name="cpain" class="form-select form-select-sm" aria-label=".form-select-sm example">
+
+                        <option class="lt" value="1">Typical angina</option>
+                        <option class="lt" value="2">Atypical Angina</option>
+                        <option class="lt" value="3">Non-Anginal Pain</option>
+                        <option class="lt" value="4">Asymptomatic</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter BloodPressure</label>
+                    <input id="first" name="BP" class="form-control" type="number">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Cholestoral</label>
+                    <input id="first" name="Cholestoral" class="form-control" type="number">
+                </div>
+                <div class="mv-3">
+
+                    <label for="formGroupExampleInput" class="form-label">Enter fasting Blood Sugar</label>
+                    <select name="sugar" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option class="lt" value="1">Greater 120</option>
+                        <option class="lt" value="2">less than 120</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter ECG Results</label>
+                    <select name="ecg" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option class="lt" value="1">Normal</option>
+                        <option class="lt" value="2">ST-T wave normality</option>
+                        <option class="lt" value="3">Left venticular hypertrophy</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Maximum HeartAttack Rate</label>
+                    <input id="fivith" name="heartrate" class="form-control" class="form-control" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Previous Peak</label>
+                    <input type="range" name="prev" class="form-range" min="0" max="4.5" step="0.5" id="customRange2"
+                        oninput="parM=parseInt(this.value)" onchange="updateTextInput(this.value);">
+                    <input type="text" id="textInput" value="">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter slope value</label>
+                    <input type="range" name="slope" class="form-range" min="0" max="2" step="1" id="customRange2"
+                        oninput="parM=parseInt(this.value)" onchange="updateTextInput1(this.value);">
+                    <input type="text" id="textInput2" value="">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter No.of major Vessels</label>
+                    <input type="range" name="vessels" class="form-range" min="0" max="3" step="1" id="customRange2"
+                        oninput="parM=parseInt(this.value)" onchange="updateTextInput2(this.value);">
+                    <input type="text" id="textInput3" value="">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter thalium Stress result</label>
+                    <input type="range" class="form-range" name="stress" min="0" max="3" step="1" id="customRange2"
+                        oninput="parM=parseInt(this.value)" onchange="updateTextInput3(this.value);">
+                    <input type="text" id="textInput4" value="">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter excercise induced Angina</label>
+                    <select name="excercise" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+                <br><br><button id="sub" class="btn btn-primary" type="submit ">predict</button>
+                <br>
+        </center>
+        </div>
+    </form>
+
+    {{ text  }}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
+
+<style>
+    .form_enter {
+        margin-left: 200px;
+        margin-right: 300px;
+    }
+
+    .titles {
+        margin: 20px 0 0 0;
+    }
+
+    select {
+        text-align-last: center;
+    }
+</style>
+<script type="application/javascript">
+    function updateTextInput(val) {
+        document.getElementById('textInput').value = val;
+    }
+    function updateTextInput1(val) {
+        document.getElementById('textInput2').value = val;
+    }
+    function updateTextInput2(val) {
+        document.getElementById('textInput3').value = val;
+    }
+    function updateTextInput3(val) {
+        document.getElementById('textInput4').value = val;
+    }
+
+</script>

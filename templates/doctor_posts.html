@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+<h2>Posts</h2>
+
+<div class="content">
+    {% block content %}
+    <div class="c1">
+        <br>
+        <div class="col-md-12 bg-light text-right">
+            <a class="btn btn-primary" id="login1" href="{{url_for('add_prescribe')}}">Add Prescription</a>
+
+            <br>
+            <hr>
+        </div>
+        {% for ele in posts %}
+        <div class="shadow p-3 mb-5 bg-body rounded">
+            <h2>Patient:{{ ele.title}}</h2><br>
+            doctor: <strong>{{ele.poster.username}}</strong><br>
+            BP:{{ ele.Bp}}<br>
+            Temp:{{ ele.Temp}} <br>
+            Symptoms:{{ ele.invest}}<br>
+            Prescription:{{ ele.prescription}}<br>
+            Date:<small>{{ele.date}}</small>
+            
+            <br>
+            <br>
+            <a href="{{url_for('view_detail',id=ele.id)}}" class="btn btn-outline-secondary">view</a>
+            <a href="{{url_for('edit_posts',id=ele.id)}}" class="btn btn-outline-secondary">edit</a>
+            <a href="{{url_for('delete_post',id=ele.id)}}" class="btn btn-outline-danger">delete</a>
+        </div>
+
+
+        {% endfor %}
+    </div>
+    <style>
+        .c1
+        {
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 10px;
+        }
+    </style>
+    {% endblock %}
+</div>

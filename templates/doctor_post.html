@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+
+<div class="content">
+  {% block content %}
+  <h3 class="danger">Prescribe </h3>
+  <div class="col-md-12 bg-light text-right">
+    <a class="btn btn-primary" id="login1" href="{{url_for('doctor_posts')}}">view all Prescription</a>
+    <br>
+    <hr>
+</div>
+  <div class="con">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.title.label(class="form-label")}}
+      {{ form.title(class="form-control") }}
+      <br />
+      {{ form.patient_id.label(class="form-label")}}
+      {{ form.patient_id(class="form-control") }}
+      <br />
+      {{ form.Bp.label(class="form-label")}}
+      {{ form.Bp(class="form-control") }}
+      <br />
+      {{ form.Temp.label(class="form-label")}}
+      {{ form.Temp(class="form-control") }}
+      <br />
+      {{ form.invest.label(class="form-label")}}
+      {{ form.invest(class="form-control",rows="5") }}
+      <br />
+      {{ form.prescription.label(class="form-label")}}
+      {{ form.prescription(class="form-control",rows="5") }}
+      <br />
+      {{ form.slug.label(class="form-label")}}
+      {{ form.slug(class="form-control") }}
+      <br />
+
+      {{ form.submit( class="btn btn-primary") }}
+    </form>
+  </div>
+  {% for msg in get_flashed_messages() %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ msg }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+  </div>
+  {% endfor %}
+
+
+  <style>
+    .con
+    {
+      margin-left: 200px;
+      margin-right: 200px;
+      margin-top: 50px;
+      margin-bottom: 300px;
+    }
+    .danger
+    {
+      margin-left: 200px;
+      margin-top: 20px;
+    }
+  </style>
+  {% endblock %}
+</div>

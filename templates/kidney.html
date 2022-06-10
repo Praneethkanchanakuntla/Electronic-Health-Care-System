@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Kideny</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Kideny Disease Prediction</h1>
+    </div>
+    <!--gender,age,hypertension,heart_disease,ever_married,work_type,Residence_type,avg_glucose_level,bmi,smoking_status-->
+    <form action="{{ url_for('predict_kidney')}}" method="post">
+        <center>
+            <div class="form_enter">
+               <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Age</label>
+                    <input name="Age" id="second"  class="form-control" required="required" type="number">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter Blood Pressure</label>
+                    <input id="first" name="BP" class="form-control" type="number ">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter specific gravity</label>
+                    <input  name="gravity" class="form-control"  id="second" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter albumin levels</label>
+                    <input  name="albumin" class="form-control"  id="third" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Enter diabetes level</label>
+                    <input  name="glucose" class="form-control"  id="fourth" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">state of Red Blood Cells</label>
+                    <select name="work" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">Normal</option>
+                        <option value="2">Abnormal</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Puss cells state</label>
+                    <select name="puss" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">Normal</option>
+                        <option value="2">Abnormal</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Puss cells Clumps</label>
+                    <select name="clumps" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">Not present</option>
+                        <option value="2">Present</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Bacteria in blood</label>
+                    <select name="bacteria" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">Not present</option>
+                        <option value="2">Present</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Blood Glucose in normal</label>
+                    <input  name="Blood" class="form-control"  id="fourth" type="number" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Blood urea</label>
+                    <input id ="six" name="urea" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">serum creatinine</label>
+                    <input id ="seven" name="serum" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Sodium Levels</label>
+                    <input id ="eight" name="sodium" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">potassium levels</label>
+                    <input id ="nine" name="potassium" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">hemoglobin levels</label>
+                    <input id ="ten" name="hemo" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">packed cell volume</label>
+                    <input id ="eleven" name="packed" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">white blood cell count</label>
+                    <input id ="12" name="wbc" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">red blood cell count</label>
+                    <input id ="13" name="rbc" required="required" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Hypertension</label>
+                    <select name="hypertension" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Diabetes</label>
+                    <select name="diabetes" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">coronary artery disease</label>
+                    <select name="coronary" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">appetite</label>
+                    <select name="appetite" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">pedal edema</label>
+                    <select name="pedal" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">anemia</label>
+                    <select name="anemia" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+
+
+                
+
+
+                
+                
+                
+
+                <br><br><button id="sub" class="btn btn-primary" type="submit ">predict</button>
+                <br>
+        </center>
+    </form>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+    {{ text  }}
+</body>
+
+</html>
+<style>
+    .form_enter {
+        margin-left: 200px;
+        margin-right: 300px;
+    }
+
+    .title {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    select {
+        text-align-last: center;
+    }
+</style>
